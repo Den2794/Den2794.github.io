@@ -1,5 +1,9 @@
-h2 {
-    color: red;
+h1 {
+    text-align: center;
+}
+h2
+{
+    text-align: center;
 }
 
 section {
@@ -34,19 +38,26 @@ p {
     max-width: 200px;
 
 }
-
+.marginLeft50px {
+    margin-left: 50px;
+}
+button {
+    margin-top: 10px;
+}
 .datacontainer {
     margin-bottom: 10px;
 }
 
 .resultSector {
     margin-left: 50px;
-    margin-top: 50px;
+    
     flex-wrap: wrap;
 }
 
 .reliableInformation {
-    margin-right: 100px;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 68px;
 }
 
 .coincidencesmap {
@@ -59,3 +70,13 @@ table {
     max-width: 200px;
     min-width: 200px;
 }
+
+.hidden {
+    display: none;
+}
+
+caption {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
