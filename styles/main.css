@@ -36,7 +36,8 @@ p {
 
 .coincidencesmap {
     max-width: 200px;
-
+    margin-left: 50px;
+    margin-bottom: 50px;
 }
 .marginLeft50px {
     margin-left: 50px;
@@ -49,7 +50,7 @@ button {
 }
 
 .resultSector {
-    margin-left: 50px;
+    
     
     flex-wrap: wrap;
 }
@@ -61,8 +62,7 @@ button {
 }
 
 .coincidencesmap {
-    margin-right: 50px;
-    margin-bottom: 50px;
+    
 }
 
 table {
@@ -80,3 +80,12 @@ caption {
     margin-bottom: 5px;
 }
 
+.scrollButton {
+    position: absolute;
+    bottom: 20px; right: 20px;
+    display: block;
+}
+
+body {
+    position: relative;
+  }
