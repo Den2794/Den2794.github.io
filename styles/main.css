@@ -1,0 +1,56 @@
+h2 {
+    color: red;
+}
+
+section {
+    display: flex;
+
+}
+
+table {
+    border: 1px;
+    border-color: black;
+    border-collapse: collapse;
+    min-width: 200px;
+    min-height: 200px;
+}
+
+.results {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+p {
+    margin: 0;
+}
+
+.coincidencesmap {
+    max-width: 200px;
+
+}
+
+.datacontainer {
+    margin-bottom: 10px;
+}
+
+.resultSector {
+    margin-left: 50px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+}
+
+.reliableInformation {
+    margin-right: 100px;
+}
+
+.coincidencesmap {
+    margin-right: 50px;
+    margin-bottom: 50px;
+}
+
+table {
+    margin-right: 50px;
+    max-width: 200px;
+    min-width: 200px;
+}
