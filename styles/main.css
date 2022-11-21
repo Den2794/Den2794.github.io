@@ -8,11 +8,16 @@ section {
 }
 
 table {
-    border: 1px;
+    border: 1px solid;
     border-color: black;
     border-collapse: collapse;
     min-width: 200px;
     min-height: 200px;
+}
+
+tr,
+td {
+    border: 1px solid;
 }
 
 .results {
