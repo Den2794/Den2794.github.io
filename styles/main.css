@@ -101,3 +101,8 @@ caption {
     flex-wrap: wrap;
     display: flex;
 }
+
+.sectionBody {
+    display: flex;
+    flex-direction: row;
+}
