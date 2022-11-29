@@ -14,10 +14,13 @@ section {
 table {
     border: 1px solid;
     border-color: black;
-    border-collapse: collapse;
+    /*border-collapse: collapse;*/
     min-width: 200px;
     min-height: 200px;
-}
+    border-radius: 25% 10%;
+    border-spacing: 0px;
+    text-align: center;
+    }
 
 tr,
 td {
