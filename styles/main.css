@@ -1,8 +1,8 @@
 h1 {
     text-align: center;
 }
-h2
-{
+
+h2 {
     text-align: center;
 }
 
@@ -12,7 +12,7 @@ section {
 }
 
 table {
-    border: 1px solid;
+   border: 1px solid;
     border-color: black;
     /*border-collapse: collapse;*/
     min-width: 200px;
@@ -20,11 +20,12 @@ table {
     border-radius: 25% 10%;
     border-spacing: 0px;
     text-align: center;
-    }
+    background-color: rgb(160, 207, 30);
+}
 
 tr,
 td {
-    border: 1px solid;
+   /* border: 0px solid;*/
 }
 
 .results {
@@ -42,21 +43,25 @@ p {
     margin-left: 50px;
     margin-bottom: 50px;
 }
+
 .marginLeft50px {
     margin-left: 50px;
 }
+
 button {
     margin-top: 10px;
     width: 123px;
-
+    border-radius: 25%;
+    background-color: coral;
 }
+
 .datacontainer {
     margin-bottom: 10px;
 }
 
 .resultSector {
     min-width: 500px;
-    
+
     flex-wrap: wrap;
 }
 
@@ -70,9 +75,7 @@ button {
 
 }
 
-.coincidencesmap {
-    
-}
+.coincidencesmap {}
 
 table {
     margin-right: 50px;
@@ -96,7 +99,7 @@ caption {
 
 .nameOfResult {
     min-width: 100%;
-    
+
 }
 
 .resultsTables {
@@ -108,4 +111,9 @@ caption {
 .sectionBody {
     display: flex;
     flex-direction: row;
+}
+.buttonTap:active {
+    color: blue;
+    background-color: aqua;
+    border: 0px;
 }
