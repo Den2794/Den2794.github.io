@@ -44,13 +44,15 @@ p {
 }
 button {
     margin-top: 10px;
+    width: 123px;
+
 }
 .datacontainer {
     margin-bottom: 10px;
 }
 
 .resultSector {
-    
+    min-width: 500px;
     
     flex-wrap: wrap;
 }
@@ -58,7 +60,11 @@ button {
 .reliableInformation {
     margin-right: 50px;
     margin-left: 50px;
-    margin-top: 68px;
+    margin-top: 80px;
+    width: 250px;
+    height: 250px;
+
+
 }
 
 .coincidencesmap {
@@ -67,8 +73,7 @@ button {
 
 table {
     margin-right: 50px;
-    max-width: 200px;
-    min-width: 200px;
+
 }
 
 .hidden {
@@ -81,8 +86,18 @@ caption {
 }
 
 .scrollButton {
-    margin-left: 80%;
     position: sticky;
     top: 2em;
+    max-width: 100px;
 }
 
+.nameOfResult {
+    min-width: 100%;
+    
+}
+
+.resultsTables {
+    max-width: 80%;
+    flex-wrap: wrap;
+    display: flex;
+}
