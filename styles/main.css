@@ -89,6 +89,7 @@ table {
 caption {
     margin-top: 10px;
     margin-bottom: 5px;
+    color: blue;
 }
 
 .scrollButton {
@@ -113,11 +114,6 @@ caption {
     flex-direction: row;
 }
 
-.buttonTap:active {
-    color: white;
-    background-color: rgba(141, 70, 105, 0.534);
-    border: 0px;
-}
 
 
 
@@ -137,3 +133,8 @@ caption {
   .gradient-button:hover {
     background-position: right center;
   }
+  .buttonTap:active {
+    color: blue;
+    background-color: rgba(141, 70, 105, 0.534);
+    border: 0px;
+}
