@@ -30,10 +30,6 @@ table {
 .results {
     display: flex;
     flex-wrap: wrap;
-
-
-
-
 }
 
 p {
@@ -110,7 +106,6 @@ caption::first-letter {
 }
 
 .resultsTables {
-    max-width: 80%;
     flex-wrap: wrap;
     display: flex;
 }
