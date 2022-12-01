@@ -31,6 +31,9 @@ table {
     display: flex;
     flex-wrap: wrap;
 
+
+
+
 }
 
 p {
@@ -61,7 +64,6 @@ button {
 
 .resultSector {
     min-width: 500px;
-
     flex-wrap: wrap;
 }
 
@@ -92,6 +94,10 @@ caption {
     color: blue;
 }
 
+caption::first-letter {
+    text-transform: uppercase;
+}
+
 .scrollButton {
     position: sticky;
     top: 2em;
@@ -118,22 +124,22 @@ caption {
 
 
 .gradient-button {
-    text-decoration: none;
-    display: inline-block;
     color: white;
 
     font-family: 'Montserrat', sans-serif;
-    
+
     letter-spacing: 2px;
-    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 50%, #9EEFE1 100%);
     background-size: 200% auto;
-    box-shadow: 0 0 20px rgba(0, 0, 0, .1);
-    transition: .5s;
-  }
-  .gradient-button:hover {
+    box-shadow: 10px 10px 20px rgb(85, 112, 199);
+    transition: 1s;
+}
+
+.gradient-button:hover {
     background-position: right center;
-  }
-  .buttonTap:active {
+}
+
+.buttonTap:active {
     color: blue;
     background-color: rgba(141, 70, 105, 0.534);
     border: 0px;
