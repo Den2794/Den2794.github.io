@@ -4,17 +4,21 @@ body {
 
 h1 {
     text-align: center;
+    font-family: Courier, monospace;
 }
 
 h2 {
     text-align: center;
+    font-family: Courier, monospace;
 }
 
 section {
     display: flex;
 
 }
-
+td {
+    font-family: Courier, monospace;
+}
 table {
     border: 1px solid;
     border-color: black;
@@ -52,6 +56,7 @@ button {
     border-radius: 25%;
     background-color: rgba(231, 118, 175, 0.425);
     border: 0px;
+    font-family: Courier, monospace;
 }
 
 .datacontainer {
@@ -88,6 +93,7 @@ caption {
     margin-top: 10px;
     margin-bottom: 5px;
     color: blue;
+    font-family: Courier, monospace;
 }
 
 caption::first-letter {
@@ -121,7 +127,7 @@ caption::first-letter {
 .gradient-button {
     color: white;
 
-    font-family: 'Montserrat', sans-serif;
+    
 
     letter-spacing: 2px;
     background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 50%, #9EEFE1 100%);
