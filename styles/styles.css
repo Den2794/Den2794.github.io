@@ -1,3 +1,16 @@
 @import "normalize.css";
 @import "main.css";
+@font-face {
+    font-family: "Open_Sans";
+    src: url(/Fonts/Open_Sans/regular400Normal/OpenSans-VariableFont_wdth\,wght.ttf) format("truetype");
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: Open_Sans;
+    src: url(/Fonts/Open_Sans/regular400Normal/OpenSans-Italic-VariableFont_wdth\,wght.ttf) format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
 
