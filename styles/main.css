@@ -45,7 +45,7 @@ p {
     margin-bottom: 50px;
 }
 
-.marginLeft50px {
+.VariationOfMaps {
     margin-left: 50px;
 }
 
@@ -149,4 +149,58 @@ caption::first-letter {
 body {
     font-family: 'Open_Sans';
     font-style: italic;
+}
+
+.imgFeo {
+background-image: url(/images/image\ 1.png);
+background-repeat: no-repeat;
+background-position: 50%;
+}
+
+.imgUr {
+    background-image: url(/images/image\ 2.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgTorn {
+    background-image: url(/images/image\ 3.png);  
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgIo {
+    background-image: url(/images/image\ 4.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgRad {
+    background-image: url(/images/image\ 5.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgTir {
+    background-image: url(/images/image\ 6.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgGifu {
+    background-image: url(/images/image\ 7.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgYar {
+    background-image: url(/images/image\ 8.png); 
+    background-repeat: no-repeat;
+    background-position: 50%;
+}
+
+.imgHegil {
+    background-image: url(/images/image\ 9.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
