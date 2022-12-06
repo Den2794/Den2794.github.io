@@ -56,6 +56,97 @@ for (const i in allSecondRunes) {
 }
 }
 
+// second_1 rune 
+const allSecond_1Runes = document.querySelectorAll('.second_1Rune')
+const second_1RuneValue = document.getElementById('2_1rune')
+for (const i in allSecond_1Runes) {
+    if (i < allSecond_1Runes.length) {
+        clearImgClass(allSecond_1Runes[i]) 
+        allSecond_1Runes[i].classList.add(`img${second_1RuneValue.value}`)
+}
+}
+
+//fourth rune             
+const allFourthRunes = document.querySelectorAll('.fourthRune')
+const fourthRuneValue = document.getElementById('4rune')
+for (const i in allFourthRunes) {
+    if (i < allFourthRunes.length) {
+        clearImgClass(allFourthRunes[i]) 
+        allFourthRunes[i].classList.add(`img${fourthRuneValue.value}`)
+}
+}
+
+//fourth_1 rune
+const allFourth_1Runes = document.querySelectorAll('.fourth_1Rune')
+const fourth_1RuneValue = document.getElementById('4_1rune')
+for (const i in allFourth_1Runes) {
+    if (i < allFourth_1Runes.length) {
+        clearImgClass(allFourth_1Runes[i]) 
+        allFourth_1Runes[i].classList.add(`img${fourth_1RuneValue.value}`)
+}
+}
+
+//fivth rune
+const allFivthRunes = document.querySelectorAll('.fivthRune')
+const fivthRuneValue = document.getElementById('5rune')
+for (const i in allFivthRunes) {
+    if (i < allFivthRunes.length) {
+        clearImgClass(allFivthRunes[i]) 
+        allFivthRunes[i].classList.add(`img${fivthRuneValue.value}`)
+}
+}
+
+//fivth_1 rune
+const allFivth_1Runes = document.querySelectorAll('.fivth_1Rune')
+const fivth_1RuneValue = document.getElementById('5_1rune')
+for (const i in allFivth_1Runes) {
+    if (i < allFivth_1Runes.length) {
+        clearImgClass(allFivth_1Runes[i]) 
+        allFivth_1Runes[i].classList.add(`img${fivth_1RuneValue.value}`)
+}
+}
+
+//sixth rune      
+const allSixthRunes = document.querySelectorAll('.sixthRune')
+const sixthRuneValue = document.getElementById('6rune')
+for (const i in allSixthRunes) {
+    if (i < allSixthRunes.length) {
+        clearImgClass(allSixthRunes[i]) 
+        allSixthRunes[i].classList.add(`img${sixthRuneValue.value}`)
+}
+}
+
+//sixth_1 rune  
+const allSixth_1Runes = document.querySelectorAll('.sixth_1Rune')
+const sixth_1RuneValue = document.getElementById('6_1rune')
+for (const i in allSixth_1Runes) {
+    if (i < allSixth_1Runes.length) {
+        clearImgClass(allSixth_1Runes[i]) 
+        allSixth_1Runes[i].classList.add(`img${sixth_1RuneValue.value}`)
+}
+}
+
+//eighth rune
+const allEighthRunes = document.querySelectorAll('.eighthRune')
+const eighthRuneValue = document.getElementById('8rune')
+for (const i in allEighthRunes) {
+    if (i < allEighthRunes.length) {
+        clearImgClass(allEighthRunes[i]) 
+        allEighthRunes[i].classList.add(`img${eighthRuneValue.value}`)
+}
+}
+
+
+//eighth_1 rune  
+const allEighth_1Runes = document.querySelectorAll('.eighth_1Rune')
+const eighth_1RuneValue = document.getElementById('8_1rune')
+for (const i in allEighth_1Runes) {
+    if (i < allEighth_1Runes.length) {
+        clearImgClass(allEighth_1Runes[i]) 
+        allEighth_1Runes[i].classList.add(`img${eighth_1RuneValue.value}`)
+}
+}
+
 
 }
 //buttonPredictTheResult

@@ -29,7 +29,6 @@ table {
     background-color: rgb(96, 168, 162);
 }
 
-
 .results {
     display: flex;
     flex-wrap: wrap;
@@ -74,8 +73,6 @@ button {
     margin-top: 80px;
     width: 250px;
     height: 250px;
-
-
 }
 
 .coincidencesmap {}
@@ -83,7 +80,6 @@ button {
 table {
     margin-right: 50px;
     box-shadow: 10px 1px 1px rgb(65, 116, 111);
-
 }
 
 .hidden {
@@ -108,7 +104,6 @@ caption::first-letter {
 
 .nameOfResult {
     min-width: 100%;
-
 }
 
 .resultsTables {
@@ -121,14 +116,8 @@ caption::first-letter {
     flex-direction: row;
 }
 
-
-
-
 .gradient-button {
     color: white;
-
-    
-
     letter-spacing: 2px;
     background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 50%, #9EEFE1 100%);
     background-size: 200% auto;
@@ -146,15 +135,16 @@ caption::first-letter {
     border: 0px;
     transition: 0s;
 }
+
 body {
     font-family: 'Open_Sans';
     font-style: italic;
 }
 
 .imgFeo {
-background-image: url(/images/image\ 1.png);
-background-repeat: no-repeat;
-background-position: 50%;
+    background-image: url(/images/image\ 1.png);
+    background-repeat: no-repeat;
+    background-position: 50%;
 }
 
 .imgUr {
@@ -164,7 +154,7 @@ background-position: 50%;
 }
 
 .imgTorn {
-    background-image: url(/images/image\ 3.png);  
+    background-image: url(/images/image\ 3.png);
     background-repeat: no-repeat;
     background-position: 50%;
 }
@@ -194,7 +184,7 @@ background-position: 50%;
 }
 
 .imgYar {
-    background-image: url(/images/image\ 8.png); 
+    background-image: url(/images/image\ 8.png);
     background-repeat: no-repeat;
     background-position: 50%;
 }
