@@ -172,27 +172,198 @@ buttonVariationOfMaps.onclick = () => {
             }
         }
     }
-    if (visibility) {
+   if (visibility) {
         const hedingMaps = document.querySelector('h2')
         hedingMaps.classList.remove('nonDisplay')
         buttonEditValues.classList.remove('nonDisplay')
 
-//8_1 test visibility on
-const tableRune8_1Visibility = document.querySelectorAll('.tableRune8_1')
-        if (eighth_1RuneValue.value.length > 1) {
-            
-            for (const i in tableRune8_1Visibility) {
-                if (i < tableRune8_1Visibility.length) {
-                    tableRune8_1Visibility[i].classList.remove(`nonDisplay}`)
+        //8_1
+        const tableRune8_1Visibility = document.querySelectorAll('.tableRune8_1')
+        console.log(tableRune8_1Visibility)                //тут 16 нод
+        if (eighth_1RuneValue.value.length > 1) {          //если название руны не пустая строка то работаем
+            console.log(tableRune8_1Visibility.length)     //выводим длину списка нод, 16    
+            for (const i in tableRune8_1Visibility) {       //а тут у нас выполняется 22 раза почему-то
+                console.log('отоброжаем 8_1')               
+                if (i < tableRune8_1Visibility.length) {    //цикл выполняется 16 раз, в потом еще 6 раз строка выше
+                    console.log('считаем итерации' + i)
+                    tableRune8_1Visibility[i].classList.remove('nonDisplay')
                 }
             }
         } else {
             for (const i in tableRune8_1Visibility) {
+                console.log('скрываем 8_1')
                 if (i < tableRune8_1Visibility.length) {
-                    tableRune8_1Visibility[i].classList.add(`nonDisplay}`)
+                    tableRune8_1Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+
+        //8
+        const tableRune8Visibility = document.querySelectorAll('.tableRune8')
+        if (eighthRuneValue.value.length > 1) {
+
+            for (const i in tableRune8Visibility) {
+                if (i < tableRune8Visibility.length) {
+                    tableRune8Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune8Visibility) {
+                if (i < tableRune8Visibility.length) {
+                    tableRune8Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+        //6_1
+        const tableRune6_1Visibility = document.querySelectorAll('.tableRune6_1')
+        if (sixth_1RuneValue.value.length > 1) {
+
+            for (const i in tableRune6_1Visibility) {
+                if (i < tableRune6_1Visibility.length) {
+                    tableRune6_1Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune6_1Visibility) {
+                if (i < tableRune6_1Visibility.length) {
+                    tableRune6_1Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+        //6
+        const tableRune6Visibility = document.querySelectorAll('.tableRune6')
+        if (sixthRuneValue.value.length > 1) {
+
+            for (const i in tableRune6Visibility) {
+                if (i < tableRune6Visibility.length) {
+                    tableRune6Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune6Visibility) {
+                if (i < tableRune6Visibility.length) {
+                    tableRune6Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+        //5_1
+        const tableRune5_1Visibility = document.querySelectorAll('.tableRune5_1')
+        if (fivth_1RuneValue.value.length > 1) {
+
+            for (const i in tableRune5_1Visibility) {
+                if (i < tableRune5_1Visibility.length) {
+                    tableRune5_1Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune5_1Visibility) {
+                if (i < tableRune5_1Visibility.length) {
+                    tableRune5_1Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+        //5
+        const tableRune5Visibility = document.querySelectorAll('.tableRune5')
+        if (fivthRuneValue.value.length > 1) {
+
+            for (const i in tableRune5Visibility) {
+                if (i < tableRune5Visibility.length) {
+                    tableRune5Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune5Visibility) {
+                if (i < tableRune5Visibility.length) {
+                    tableRune5Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+
+        //4_1
+        const tableRune4_1Visibility = document.querySelectorAll('.tableRune4_1')
+        if (fourth_1RuneValue.value.length > 1) {
+
+            for (const i in tableRune4_1Visibility) {
+                if (i < tableRune4_1Visibility.length) {
+                    tableRune4_1Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune4_1Visibility) {
+                if (i < tableRune4_1Visibility.length) {
+                    tableRune4_1Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+        //4
+        const tableRune4Visibility = document.querySelectorAll('.tableRune4')
+        if (eighth_1RuneValue.value.length > 1) {
+
+            for (const i in tableRune4Visibility) {
+                if (i < tableRune4Visibility.length) {
+                    tableRune4Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune4Visibility) {
+                if (i < tableRune4Visibility.length) {
+                    tableRune4Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+
+        //2
+        const tableRune2Visibility = document.querySelectorAll('.tableRune2')
+        if (secondRuneValue.value.length > 1) {
+
+            for (const i in tableRune2Visibility) {
+                if (i < tableRune2Visibility.length) {
+                    tableRune2Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune2Visibility) {
+                if (i < tableRune2Visibility.length) {
+                    tableRune2Visibility[i].classList.add('nonDisplay')
+                }
+            }
+        }
+
+
+        //2_1
+        const tableRune2_1Visibility = document.querySelectorAll('.tableRune2_1')
+
+        if (second_1RuneValue.value.length > 1) {
+
+            for (const i in tableRune2_1Visibility) {
+                if (i < tableRune2_1Visibility.length) {
+                    tableRune2_1Visibility[i].classList.remove('nonDisplay')
+                }
+            }
+        } else {
+            for (const i in tableRune2_1Visibility) {
+                if (i < tableRune2_1Visibility.length) {
+                    tableRune2_1Visibility[i].classList.add('nonDisplay')
                 }
             }
         }
 
     }
+    
 }

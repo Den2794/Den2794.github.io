@@ -193,7 +193,39 @@ body {
     background-repeat: no-repeat;
     background-position: 50%;
 }
-
-/*.nonDisplay {
+.tableRune2_1{
+    display: none;
+    }
+.tableRune4_1 {
+    display: none;
+    }
+.tableRune5_1 {
+    display: none;
+    }
+.tableRune6_1 {
+    display: none;
+    }
+    
+.tableRune8_1{
+    display: none;
+    }
+    
+.tableRune2 {
+    display: none;
+    }
+.tableRune4 {
+    display: none;
+    }
+.tableRune5 {
+    display: none;
+    }
+.tableRune6 {
+    display: none;
+    }
+    
+.tableRune8{
+display: none;
+}
+.nonDisplay {
     display: none;
 }
