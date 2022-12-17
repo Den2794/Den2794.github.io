@@ -38,10 +38,11 @@ p {
     margin: 0;
 }
 
-.coincidencesmap {
+.coincidencesMap {
     max-width: 200px;
     margin-left: 50px;
     margin-bottom: 50px;
+    
 }
 
 .VariationOfMaps {
@@ -58,7 +59,7 @@ button {
     font-style: italic;
 }
 
-.datacontainer {
+.dataContainer {
     margin-bottom: 10px;
 }
 
@@ -99,6 +100,7 @@ caption::first-letter {
     position: sticky;
     top: 30px;
     max-width: 100px;
+    margin-left: 20px;
 }
 
 .nameOfResult {
@@ -192,40 +194,8 @@ body {
     background-image: url(/images/image\ 9.png);
     background-repeat: no-repeat;
     background-position: 50%;
-}/*
-.tableRune2_1{
-    display: none;
-    }
-.tableRune4_1 {
-    display: none;
-    }
-.tableRune5_1 {
-    display: none;
-    }
-.tableRune6_1 {
-    display: none;
-    }
-    
-.tableRune8_1{
-    display: none;
-    }
-    
-.tableRune2 {
-    display: none;
-    }
-.tableRune4 {
-    display: none;
-    }
-.tableRune5 {
-    display: none;
-    }
-.tableRune6 {
-    display: none;
-    }
-    
-.tableRune8{
-display: none;
 }
-.nonDisplay {
+/*.nonDisplay {
     display: none;
-}*/
+}
+
