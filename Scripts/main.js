@@ -10,8 +10,8 @@ buttonPredictTheResult.onclick = () => {
     [0, 0, 0, 0, 0]]
     let variationsPicture = 1
     for (let i = 0; i < valuesResult[0].length; i += 1) {
-        
-        
+
+
         if (valuesResult[0][i] > valuesResult[1][i]) {
 
             if (valuesResult[0][i] * 0.8 > valuesResult[1][i]) {
@@ -37,108 +37,133 @@ buttonPredictTheResult.onclick = () => {
     }
     const ResultTable = document.querySelectorAll('table.nonDisplay')
     if (resultMassive != [[0, 0, 0, 0, 0], [0, 0, 0, 0, 0]]) {
-        document.querySelector('h1').classList.remove('.nonDisplay')
+        document.querySelector('h1').classList.remove('nonDisplay')
         for (let i = 0; i < variationsPicture; i += 1) {
-            ResultTable[i].classList.remove('.nonDisplay')
+            ResultTable[i].classList.remove('nonDisplay')
         }
     }
-    
-    document.querySelector('h1').classList.remove('nonDisplay')
+
+
+
+    document.querySelector('h1').classList.remove('.nonDisplay')
     for (let i = 0; i < variationsPicture; i += 1) {
-        document.querySelectorAll('table.nonDisplay')[i].classList.remove('nonDisplay')
+        document.querySelectorAll('table.nonDisplay')[i].classList.remove('.nonDisplay')
     }
     console.log(resultMassive)
-    /*
-    for (let i = 14; i < 50; i += 1) {
-        document.querySelectorAll('td')[i].classList.remove(imgRunes)
-    }
 
-let   currentRune = document.getElementById('1rune')
-    for (let i = 14; i < 42; i += 9) {
-        document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+    for (let i = 0; i < resultMassive[1].length; i += 1){
+        resultMassive[1][i]
     }
-
-    currentRune = document.getElementById('3rune')
-    for (let i = 16; i < 44; i += 9) {
-        document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-    }
-
-    currentRune = document.getElementById('7rune')
-    for (let i = 20; i < 48; i += 9) {
-        document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-    }
-
-    currentRune = document.getElementById('9rune')
-    for (let i = 22; i < 50; i += 9) {
-        document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+    for (let i = 0; i < variationsPicture; i += 1) {
+        for (let k = 0; k < resultMassive[0].length; k += 1) {
+            if ((resultMassive[0][i] === 0) + (resultMassive[1][i] === 0.1)) {
+                if(resultMassive[0][i] === 0) {
+                    resultTables[i][k] = resultMassive[1][i]
+                }else {
+                    resultTables[i][k] = resultMassive[0][i]
+                }
+            } else {
+                
+            }
+        } 
     }
 
 
 
-    if (valuesResult[0] > valuesResult[1]) {
-         currentRune = document.getElementById('2rune')
-        for (let i = 15; i < 43; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    } else if (valuesResult[0] < valuesResult[1]){
-         currentRune = document.getElementById('2_1rune')
-        for (let i = 15; i < 43; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    }
 
-    if (valuesResult[2] > valuesResult[3]) {
-         currentRune = document.getElementById('4rune')
-        for (let i = 17; i < 45; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    } else if (valuesResult[2] < valuesResult[3]){
-         currentRune = document.getElementById('4_1rune')
-        for (let i = 17; i < 45; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    }
-
-    if (valuesResult[4] > valuesResult[5]) {
-         currentRune = document.getElementById('5rune')
-        for (let i = 18; i < 46; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-
-    } else if (valuesResult[4] < valuesResult[5]){
-         currentRune = document.getElementById('5_1rune')
-        for (let i = 18; i < 46; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    }
-
-
-
-    if (valuesResult[6] > valuesResult[7]) {
-         currentRune = document.getElementById('6rune')
-        for (let i = 19; i < 47; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    } else if (valuesResult[6] < valuesResult[7]){
-         currentRune = document.getElementById('6_1rune')
-        for (let i = 19; i < 47; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-
-    }
-
-    if (valuesResult[8] > valuesResult[9]) {
-         currentRune = document.getElementById('8rune')
-        for (let i = 21; i < 49; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-    } else if (valuesResult[8] < valuesResult[9]){
-         currentRune = document.getElementById('8_1rune')
-        for (let i = 21; i < 49; i += 9) {
-            document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-        }
-
-    }*/
+    /* 
+ 
+     
+     for (let i = 14; i < 50; i += 1) {
+         document.querySelectorAll('td')[i].classList.remove(imgRunes)
+     }
+ 
+ let   currentRune = document.getElementById('1rune')
+     for (let i = 14; i < 42; i += 9) {
+         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+     }
+ 
+     currentRune = document.getElementById('3rune')
+     for (let i = 16; i < 44; i += 9) {
+         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+     }
+ 
+     currentRune = document.getElementById('7rune')
+     for (let i = 20; i < 48; i += 9) {
+         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+     }
+ 
+     currentRune = document.getElementById('9rune')
+     for (let i = 22; i < 50; i += 9) {
+         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+     }
+ 
+ 
+ 
+     if (valuesResult[0] > valuesResult[1]) {
+          currentRune = document.getElementById('2rune')
+         for (let i = 15; i < 43; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     } else if (valuesResult[0] < valuesResult[1]){
+          currentRune = document.getElementById('2_1rune')
+         for (let i = 15; i < 43; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     }
+ 
+     if (valuesResult[2] > valuesResult[3]) {
+          currentRune = document.getElementById('4rune')
+         for (let i = 17; i < 45; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     } else if (valuesResult[2] < valuesResult[3]){
+          currentRune = document.getElementById('4_1rune')
+         for (let i = 17; i < 45; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     }
+ 
+     if (valuesResult[4] > valuesResult[5]) {
+          currentRune = document.getElementById('5rune')
+         for (let i = 18; i < 46; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+ 
+     } else if (valuesResult[4] < valuesResult[5]){
+          currentRune = document.getElementById('5_1rune')
+         for (let i = 18; i < 46; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     }
+ 
+ 
+ 
+     if (valuesResult[6] > valuesResult[7]) {
+          currentRune = document.getElementById('6rune')
+         for (let i = 19; i < 47; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     } else if (valuesResult[6] < valuesResult[7]){
+          currentRune = document.getElementById('6_1rune')
+         for (let i = 19; i < 47; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+ 
+     }
+ 
+     if (valuesResult[8] > valuesResult[9]) {
+          currentRune = document.getElementById('8rune')
+         for (let i = 21; i < 49; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+     } else if (valuesResult[8] < valuesResult[9]){
+          currentRune = document.getElementById('8_1rune')
+         for (let i = 21; i < 49; i += 9) {
+             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
+         }
+ 
+     }*/
 }
 
 //buttonEditValues
@@ -151,7 +176,7 @@ buttonEditValues.onclick = () => {
         }
     }
 
-    
+
     const valuesCoincidences = document.querySelectorAll('input')
 
     //amount runes 2
@@ -248,11 +273,11 @@ buttonEditValues.onclick = () => {
 //buttonVariationOfMaps
 const buttonVariationOfMaps = document.querySelector('.VariationOfMaps')
 buttonVariationOfMaps.onclick = () => {
-    
 
-    
-    
-   
+
+
+
+
 
     //first rune
     const allFirstRunes = document.querySelectorAll('.firstRune')
@@ -422,6 +447,6 @@ buttonVariationOfMaps.onclick = () => {
             document.querySelectorAll('.img')[i].parentElement.parentElement.parentElement.parentElement.classList.add('nonDisplay')
         }
 
-    }   
+    }
 
 }
