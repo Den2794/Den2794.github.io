@@ -6,14 +6,13 @@ function clearImgClass(numberRune) {
 //buttonPredictTheResult
 const buttonPredictTheResult = document.querySelectorAll('.buttonTap')[1]
 buttonPredictTheResult.onclick = () => {
+    resultPictures = document.querySelectorAll('td.resultRune')
+    tablesResult = document.querySelectorAll('table.nonDisplay')
     const resultMassive = [[0, 0, 0, 0, 0],
     [0, 0, 0, 0, 0]]
     let variationsPicture = 1
     for (let i = 0; i < valuesResult[0].length; i += 1) {
-
-
         if (valuesResult[0][i] > valuesResult[1][i]) {
-
             if (valuesResult[0][i] * 0.8 > valuesResult[1][i]) {
                 resultMassive[0][i] = valuesResult[0][i]
             } else {
@@ -45,15 +44,17 @@ buttonPredictTheResult.onclick = () => {
 
 
 
-    document.querySelector('h1').classList.remove('.nonDisplay')
-    for (let i = 0; i < variationsPicture; i += 1) {
-        document.querySelectorAll('table.nonDisplay')[i].classList.remove('.nonDisplay')
-    }
-    console.log(resultMassive)
+  document.querySelector('h1').classList.remove('.nonDisplay')
 
-    for (let i = 0; i < resultMassive[1].length; i += 1){
-        resultMassive[1][i]
-    }
+    
+
+ /*//for (let i = 0; i < resultMassive[1].length; i += 1){
+  //      resultMassive[1][i]
+ //   }
+    if (variationsPicture === 1){ 
+        resultTables = resultMassive
+
+    } else { 
     for (let i = 0; i < variationsPicture; i += 1) {
         for (let k = 0; k < resultMassive[0].length; k += 1) {
             if ((resultMassive[0][i] === 0) + (resultMassive[1][i] === 0.1)) {
@@ -67,103 +68,912 @@ buttonPredictTheResult.onclick = () => {
             }
         } 
     }
+}*/
+console.log(resultMassive)
+const firstRunes = document.getElementById('1rune')
+const thirdRunes = document.getElementById('3rune')
+const seventhRunes = document.getElementById('7rune')
+const ninthRunes = document.getElementById('9rune')
+const secondRunes = document.getElementById('2rune')
+const second_1Runes = document.getElementById('2_1rune')
+const fourthRunes = document.getElementById('4rune')
+const fourth_1Runes = document.getElementById('4_1rune')
+const fivthRunes = document.getElementById('5rune')
+const fivth_1Runes = document.getElementById('5_1rune')
+const sixthRunes = document.getElementById('6rune')
+const sixth_1Runes = document.getElementById('6_1rune')
+const eighthRunes = document.getElementById('8rune')
+const eighth_1Runes = document.getElementById('8_1rune')
+
+const firstPosition = 0
+const secondPosition = 1
+const thirdPosition = 2
+const fourthPosition = 3
+const fifthPosition = 4
+
+const numberOfCells = 9
+
+const firstCell = 0
+const secondCell = 1
+const thirdCell = 2
+const fourthCell = 3
+const fifthCell = 4
+const sixthCell = 5
+const seventhCell = 6
+const eighthCell = 7
+const ninthCell = 8
+
+for (let i = firstCell; i < resultPictures.length; i += numberOfCells){
+    resultPictures[i].classList.add(`img${firstRunes.value}`)
+}
+for (let i = thirdCell; i < resultPictures.length; i += numberOfCells){        
+        resultPictures[i].classList.add(`img${thirdRunes.value}`)
+}
+for (let i = seventhCell; i < resultPictures.length; i += numberOfCells){
+    resultPictures[i].classList.add(`img${seventhRunes.value}`)
+}
+for (let i = ninthCell; i < resultPictures.length; i += numberOfCells){
+    resultPictures[i].classList.add(`img${ninthRunes.value}`)
+}     
+        
+
+const testMassiv = []
+for (let i = 0; i < resultMassive[0].length; i+=1){
+    testMassiv[i] = Math.abs(resultMassive[0][i] - resultMassive[1][i])
+}
+console.log('testMassiv '+ testMassiv)
+//ищем максимальный элемент массива, узнаем его порядковый номер, 
+//такую руну рисуем вручную по двоичной табличке руками
+//присваиваем значение (-1) что бы не спутать и не повториться
+function getMaxOfArray (array) {
+    return Math.max.apply(null, array)
+}
+let courentPoint = 0  
+let courentPosition = 0
+
+courentPoint = getMaxOfArray(testMassiv)
+courentPosition = testMassiv.indexOf(courentPoint)
+//первый проход первое место
+if (courentPosition === firstPosition){
+    if (resultMassive[0][firstPosition] > resultMassive[1][firstPosition]){
+        for (let i = secondCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + secondCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][firstPosition] < resultMassive[1][firstPosition])){
+        for (let i = secondCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + secondCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+    } else if ((resultMassive[0][firstPosition] === resultMassive[1][firstPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+//первый проход второе место
+if (courentPosition === secondPosition){
+    if (resultMassive[0][secondPosition] > resultMassive[1][secondPosition]){
+        for (let i = fourthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fourthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][secondPosition] < resultMassive[1][secondPosition])){
+        for (let i = fourthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fourthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+    } else if ((resultMassive[0][secondPosition] === resultMassive[1][secondPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}  
+//первый проход третье место
+if (courentPosition === thirdPosition){
+    if (resultMassive[0][thirdPosition] > resultMassive[1][thirdPosition]){
+        for (let i = fifthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fifthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][thirdPosition] < resultMassive[1][thirdPosition])){
+        for (let i = fifthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fifthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+    } else if ((resultMassive[0][thirdPosition] === resultMassive[1][thirdPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+//первый проход четвертое место
+if (courentPosition === fourthPosition){
+    if (resultMassive[0][fourthPosition] > resultMassive[1][fourthPosition]){
+        for (let i = sixthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + sixthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] < resultMassive[1][fourthPosition])){
+        for (let i = sixthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + sixthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] === resultMassive[1][fourthPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+//первый проход пятое место
+if (courentPosition === fifthPosition){
+    if (resultMassive[0][fifthPosition] > resultMassive[1][fifthPosition]){
+        for (let i = eighthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + eighthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] < resultMassive[1][fifthPosition])){
+        for (let i = eighthCell; i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + eighthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] === resultMassive[1][fifthPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+testMassiv[courentPosition] = -1
+
+
+courentPoint = getMaxOfArray(testMassiv)
+courentPosition = testMassiv.indexOf(courentPoint)
+//второй проход первое место
+if (courentPosition === firstPosition){
+    if (resultMassive[0][firstPosition] > resultMassive[1][firstPosition]){
+        for (let i = secondCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + secondCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + secondCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + secondCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][firstPosition] < resultMassive[1][firstPosition])){
+        for (let i = secondCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + secondCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + secondCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + secondCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+    } else if ((resultMassive[0][firstPosition] === resultMassive[1][firstPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+
+//второй проход второе место
+if (courentPosition === secondPosition){
+    if (resultMassive[0][secondPosition] > resultMassive[1][secondPosition]){
+        for (let i = fourthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fourthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fourthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fourthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][secondPosition] < resultMassive[1][secondPosition])){
+        for (let i = fourthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fourthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fourthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fourthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+    } else if ((resultMassive[0][secondPosition] === resultMassive[1][secondPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+
+//второй проход третье место
+if (courentPosition === thirdPosition){
+    if (resultMassive[0][thirdPosition] > resultMassive[1][thirdPosition]){
+        for (let i = fifthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fifthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fifthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fifthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][thirdPosition] < resultMassive[1][thirdPosition])){
+        for (let i = fifthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fifthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fifthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fifthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+    } else if ((resultMassive[0][thirdPosition] === resultMassive[1][thirdPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+
+//второй проход четвертое место
+if (courentPosition === fourthPosition){
+    if (resultMassive[0][fourthPosition] > resultMassive[1][fourthPosition]){
+        for (let i = sixthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + sixthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + sixthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + sixthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] < resultMassive[1][fourthPosition])){
+        for (let i = sixthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + sixthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + sixthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + sixthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] === resultMassive[1][fourthPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+
+//второй проход пятое место
+if (courentPosition === fifthPosition){
+    if (resultMassive[0][fifthPosition] > resultMassive[1][fifthPosition]){
+        for (let i = eighthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + eighthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + eighthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + eighthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] < resultMassive[1][fifthPosition])){
+        for (let i = eighthCell; i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + eighthCell); i < (resultPictures.length * 3 / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + eighthCell); i < (resultPictures.length / 2); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + eighthCell); i < resultPictures.length; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] === resultMassive[1][fifthPosition])) {
+        alert('Какой-то бред, нужно больше данных')
+    }
+}
+testMassiv[courentPosition] = -1
+
+
+courentPoint = getMaxOfArray(testMassiv)
+courentPosition = testMassiv.indexOf(courentPoint)
+//третий проход первое место
+if (courentPosition === firstPosition){
+    if (resultMassive[0][firstPosition] >= resultMassive[1][firstPosition]){
+        for (let i = secondCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + secondCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + secondCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + secondCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + secondCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + secondCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + secondCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + secondCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+
+    } else if ((resultMassive[0][firstPosition] < resultMassive[1][firstPosition])){
+        for (let i = secondCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + secondCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + secondCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + secondCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + secondCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + secondCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + secondCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + secondCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+}
+}
+//третий проход второе место    
+if (courentPosition === secondPosition){
+    if (resultMassive[0][secondPosition] >= resultMassive[1][secondPosition]){
+        for (let i = fourthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fourthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fourthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fourthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + fourthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + fourthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + fourthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + fourthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+
+    
+    } else if ((resultMassive[0][secondPosition] < resultMassive[1][secondPosition])){
+        for (let i = fourthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fourthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fourthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fourthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + fourthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + fourthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + fourthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + fourthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }}
+    }
+//третий проход третье место
+if (courentPosition === thirdPosition){
+    if (resultMassive[0][thirdPosition] >= resultMassive[1][thirdPosition]){
+        for (let i = fifthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fifthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fifthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fifthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + fifthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + fifthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + fifthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + fifthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+
+    } else if ((resultMassive[0][thirdPosition] < resultMassive[1][thirdPosition])){
+        for (let i = fifthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + fifthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + fifthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + fifthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + fifthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + fifthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + fifthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + fifthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+    }
+}
+
+//третий проход четвертое место    
+if (courentPosition === fourthPosition){
+    if (resultMassive[0][fourthPosition] >= resultMassive[1][fourthPosition]){
+        for (let i = sixthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + sixthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + sixthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + sixthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + sixthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + sixthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + sixthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + sixthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] < resultMassive[1][fourthPosition])){
+        for (let i = sixthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + sixthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + sixthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + sixthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + sixthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + sixthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + sixthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + sixthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+    }
+}
+
+//третий проход пятое место  
+if (courentPosition === fifthPosition){
+    if (resultMassive[0][fifthPosition] >= resultMassive[1][fifthPosition]){
+        for (let i = eighthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + eighthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + eighthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + eighthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + eighthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + eighthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + eighthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + eighthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] < resultMassive[1][fifthPosition])){
+        for (let i = eighthCell; i < (resultPictures.length / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) + eighthCell); i < (resultPictures.length * 3 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 2) + eighthCell); i < (resultPictures.length * 5 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = ((resultPictures.length / 4) * 3 + eighthCell); i < (resultPictures.length * 7 / 8); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+
+
+        for (let i = ((resultPictures.length / 8) + eighthCell); i < (resultPictures.length / 4); i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 3 + eighthCell); i < (resultPictures.length / 2) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 5 + eighthCell); i < ((resultPictures.length / 4) * 3) ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = ((resultPictures.length / 8) * 7 + eighthCell); i < resultPictures.length ; i += numberOfCells){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+    }
+}
+testMassiv[courentPosition] = -1
+
+courentPoint = getMaxOfArray(testMassiv)
+courentPosition = testMassiv.indexOf(courentPoint)
+//четвертый проход первое место
+if (courentPosition === firstPosition){
+    if (resultMassive[0][firstPosition] >= resultMassive[1][firstPosition]){
+        for (let i = secondCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = (secondCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = (secondCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = (secondCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+
+    } else if ((resultMassive[0][firstPosition] < resultMassive[1][firstPosition])){
+        for (let i = secondCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = (secondCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = (secondCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = (secondCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+}
+}
+//четвертый проход второе место
+if (courentPosition === secondPosition){
+    if (resultMassive[0][secondPosition] >= resultMassive[1][secondPosition]){
+        for (let i = fourthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = (fourthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = (fourthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = (fourthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+
+    
+    } else if ((resultMassive[0][secondPosition] < resultMassive[1][secondPosition])){
+        for (let i = fourthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = (fourthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = (fourthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = (fourthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+    }
+    }
+//четвертый проход третье место 
+if (courentPosition === thirdPosition){
+    if (resultMassive[0][thirdPosition] >= resultMassive[1][thirdPosition]){
+        for (let i = fifthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = (fifthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = (fifthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = (fifthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+
+    } else if ((resultMassive[0][thirdPosition] < resultMassive[1][thirdPosition])){
+        for (let i = fifthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = (fifthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = (fifthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = (fifthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+    }
+}
+
+//четвертый проход четвертое место      
+if (courentPosition === fourthPosition){
+    if (resultMassive[0][fourthPosition] >= resultMassive[1][fourthPosition]){
+        for (let i = sixthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = (sixthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = (sixthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = (sixthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] < resultMassive[1][fourthPosition])){
+        for (let i = sixthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = (sixthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = (sixthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = (sixthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+    }
+}
+
+//четвертый проход пятое место     
+if (courentPosition === fifthPosition){
+    if (resultMassive[0][fifthPosition] >= resultMassive[1][fifthPosition]){
+        for (let i = eighthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = (eighthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = (eighthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = (eighthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] < resultMassive[1][fifthPosition])){
+        for (let i = eighthCell; i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = (eighthCell + numberOfCells); i < (resultPictures.length); i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = (eighthCell + (numberOfCells * 2)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = (eighthCell + (numberOfCells * 3)); i < resultPictures.length; i += (4 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+    }
+}
+testMassiv[courentPosition] = -1
+
+courentPoint = getMaxOfArray(testMassiv)
+courentPosition = testMassiv.indexOf(courentPoint)
+
+
+
+//пятый проход первое место
+if (courentPosition === firstPosition){
+    if (resultMassive[0][firstPosition] >= resultMassive[1][firstPosition]){
+        for (let i = secondCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+        for (let i = (secondCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][firstPosition] < resultMassive[1][firstPosition])){
+        for (let i = secondCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${second_1Runes.value}`)
+        }
+        for (let i = (secondCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${secondRunes.value}`)
+        }
+    } 
+}
+//пятый проход второе место   
+if (courentPosition === secondPosition){
+    if (resultMassive[0][secondPosition] >= resultMassive[1][secondPosition]){
+        for (let i = fourthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+        for (let i = (fourthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][secondPosition] < resultMassive[1][secondPosition])){
+        for (let i = fourthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourth_1Runes.value}`)
+        }
+        for (let i = (fourthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fourthRunes.value}`)
+        }
+    } 
+}  
+//пятый проход третье место  
+if (courentPosition === thirdPosition){
+    if (resultMassive[0][thirdPosition] >= resultMassive[1][thirdPosition]){
+        for (let i = fifthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+        for (let i = (fifthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][thirdPosition] < resultMassive[1][thirdPosition])){
+        for (let i = fifthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivth_1Runes.value}`)
+        }
+        for (let i = (fifthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${fivthRunes.value}`)
+        }
+    } 
+} 
+//пятый проход четвертое место  
+if (courentPosition === fourthPosition){
+    if (resultMassive[0][fourthPosition] >= resultMassive[1][fourthPosition]){
+        for (let i = sixthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+        for (let i = (sixthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fourthPosition] < resultMassive[1][fourthPosition])){
+        for (let i = sixthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixth_1Runes.value}`)
+        }
+        for (let i = (sixthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${sixthRunes.value}`)
+        }
+    } 
+}
+//пятый проход пятое место
+if (courentPosition === fifthPosition){
+    if (resultMassive[0][fifthPosition] >= resultMassive[1][fifthPosition]){
+        for (let i = eighthCell; i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+        for (let i = (eighthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+    } else if ((resultMassive[0][fifthPosition] < resultMassive[1][fifthPosition])){
+        for (let i = eighthCell; i < resultPictures.length; i += (2 *numberOfCells)){
+            resultPictures[i].classList.add(`img${eighth_1Runes.value}`)
+        }
+        for (let i = (eighthCell + numberOfCells); i < resultPictures.length; i += (2 * numberOfCells)){
+            resultPictures[i].classList.add(`img${eighthRunes.value}`)
+        }
+    } 
+}
 
 
 
 
-    /* 
- 
-     
-     for (let i = 14; i < 50; i += 1) {
-         document.querySelectorAll('td')[i].classList.remove(imgRunes)
-     }
- 
- let   currentRune = document.getElementById('1rune')
-     for (let i = 14; i < 42; i += 9) {
-         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-     }
- 
-     currentRune = document.getElementById('3rune')
-     for (let i = 16; i < 44; i += 9) {
-         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-     }
- 
-     currentRune = document.getElementById('7rune')
-     for (let i = 20; i < 48; i += 9) {
-         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-     }
- 
-     currentRune = document.getElementById('9rune')
-     for (let i = 22; i < 50; i += 9) {
-         document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-     }
- 
- 
- 
-     if (valuesResult[0] > valuesResult[1]) {
-          currentRune = document.getElementById('2rune')
-         for (let i = 15; i < 43; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     } else if (valuesResult[0] < valuesResult[1]){
-          currentRune = document.getElementById('2_1rune')
-         for (let i = 15; i < 43; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     }
- 
-     if (valuesResult[2] > valuesResult[3]) {
-          currentRune = document.getElementById('4rune')
-         for (let i = 17; i < 45; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     } else if (valuesResult[2] < valuesResult[3]){
-          currentRune = document.getElementById('4_1rune')
-         for (let i = 17; i < 45; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     }
- 
-     if (valuesResult[4] > valuesResult[5]) {
-          currentRune = document.getElementById('5rune')
-         for (let i = 18; i < 46; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
- 
-     } else if (valuesResult[4] < valuesResult[5]){
-          currentRune = document.getElementById('5_1rune')
-         for (let i = 18; i < 46; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     }
- 
- 
- 
-     if (valuesResult[6] > valuesResult[7]) {
-          currentRune = document.getElementById('6rune')
-         for (let i = 19; i < 47; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     } else if (valuesResult[6] < valuesResult[7]){
-          currentRune = document.getElementById('6_1rune')
-         for (let i = 19; i < 47; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
- 
-     }
- 
-     if (valuesResult[8] > valuesResult[9]) {
-          currentRune = document.getElementById('8rune')
-         for (let i = 21; i < 49; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
-     } else if (valuesResult[8] < valuesResult[9]){
-          currentRune = document.getElementById('8_1rune')
-         for (let i = 21; i < 49; i += 9) {
-             document.querySelectorAll('td')[i].classList.add(`img${currentRune.value}`)
-         }
- 
-     }*/
+
+
+
+
+
+
+
+
+
+
+
 }
 
 //buttonEditValues
@@ -288,6 +1098,9 @@ buttonVariationOfMaps.onclick = () => {
             allFirstRunes[i].classList.add(`img${firstRuneValue.value}`)
         }
     }
+
+
+
 
     //third rune
     const allThirdRunes = document.querySelectorAll('.thirdRune')
